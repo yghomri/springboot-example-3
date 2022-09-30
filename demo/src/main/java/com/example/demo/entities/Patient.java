@@ -32,7 +32,6 @@ public class Patient {
     @Temporal(TemporalType.DATE)
     private Date birthDate;
 
-    private int score;
     private boolean sick;
 
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)

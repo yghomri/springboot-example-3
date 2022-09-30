@@ -10,6 +10,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,5 +30,6 @@ public class Consultation {
     private String report;
 
     @OneToOne
+    @JsonProperty(access = Access.WRITE_ONLY) // Not including rendez vous in consultation
     private RendezVous rendezVous;
 }
